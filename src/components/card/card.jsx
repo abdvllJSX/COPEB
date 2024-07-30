@@ -12,7 +12,7 @@ export const StudentCard = ({ student, setStudents }) => {
     const [loading, setLoading] = useState(false)
     async function toggleActive(id) {
         setLoading(true)
-        const { error } = await supabase.from('COBEP').update({ status: ' inactive' }).eq('ID', id)
+        const { error } = await supabase.from('COBEP').update({ status: 'active' }).eq('ID', id)
         if (!error) {
             const { data, error: secondaryError } = await supabase.from('COBEP').select('*').eq('ID', id).single(); // 
             if (!secondaryError) {
