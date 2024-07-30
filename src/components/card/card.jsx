@@ -26,14 +26,14 @@ export const StudentCard = ({ student, setStudents }) => {
         }
     }
     const gender = {
-        ' M': 'Male',
-        ' F': 'Female'
+        'M': 'Male',
+        'F': 'Female'
     }
     const department = (matricNumber) => {
-        if (matricNumber.length == 14) {
+        if (matricNumber.length == 13) {
+            return `${matricNumber[5]}${matricNumber[6]}`
+        } else if (matricNumber.length == 14) {
             return `${matricNumber[6]}${matricNumber[7]}`
-        } else if (matricNumber.length == 15) {
-            return `${matricNumber[7]}${matricNumber[8]}`
         }
     }
     const returnCorrectDepartment = (apprev) => {
@@ -67,7 +67,6 @@ export const StudentCard = ({ student, setStudents }) => {
                     </div>
 
                     <div className="item">
-                        {console.log(student)}
                         <h4>department:</h4>
                         <p>{returnCorrectDepartment(department(`${student.Matric_Number}`))}</p>
                     </div>
@@ -99,9 +98,9 @@ export const DefaultCard = ({ students }) => {
     return (
         <div className="default_card">
             <h4>No of students in Group: <span>52</span></h4>
-            <h4>Total Students: <span>{students.length}</span></h4>
+            <h4>Total Students: <span>{students.length - 1}</span></h4>
             <h4>Active Students: <span>{activeStudents.length}</span></h4>
-            <h4>inactive Students: <span>{(students.length) - (activeStudents.length)}</span></h4>
+            <h4>inactive Students: <span>{(students.length - 1) - (activeStudents.length)}</span></h4>
         </div>
     )
 }
