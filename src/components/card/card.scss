@@ -1,0 +1,113 @@
+@import '../../variables';
+@import '../../mixins';
+
+.student_card {
+    background-color: $bg-200;
+    border: 1px solid $bg-300;
+    padding: 1.5rem 1rem;
+    text-transform: capitalize;
+    margin-bottom: 1.5rem;
+
+    @include lg{
+        margin-bottom: 0;
+        max-width: 290px;
+    }
+
+    .top {
+        display: flex;
+        align-items: center;
+        padding-bottom: 1.5rem;
+        justify-content: space-between;
+        border-bottom: 1px solid $bg-300;
+
+        .user_name{
+            @include lg {
+                font-size: .8rem;
+            }
+        }
+        .toggler {
+            width: 3rem;
+            height: 1.5rem;
+            border-radius: 1.5rem;
+            background-color: $bg-100;
+            display: flex;
+            align-items: center;
+            position: relative;
+
+            .ball {
+                width: 1rem;
+                transition: all .5s ease-in;
+                aspect-ratio: 1 / 1;
+                position: absolute;
+                border-radius: 50%;
+                background-color: $bg-300;
+            }
+        }
+    }
+
+    .bottom {
+        display: flex;
+        justify-content: space-between;
+
+        .item {
+            padding-block: .5rem;
+
+            h4 {
+                margin-bottom: .2rem;
+            }
+        }
+    }
+}
+
+.default_card {
+    @extend .student_card;
+
+    @include lg{
+        align-self: center;
+        max-width: 20%;
+    }
+    h4 {
+        margin-bottom: .3rem;
+        font-family: "Open Sans", sans-serif;
+        
+        @include lg{
+            font-size: 1.2rem;
+        }
+
+        span {
+            font-weight: 500;
+            font-size: .8rem;
+
+            @include lg{
+                font-size: 1rem;
+            }
+        }
+    }
+}
+
+.Toastify__toast-container {
+    z-index: 9 !important;
+    width: 70vw !important;
+    left: auto !important;
+    margin-top: 1rem !important;
+    margin-left: 1rem !important;
+
+    @include lg {
+        width: auto !important;
+
+    }
+}
+
+.Toastify__toast {
+    text-transform: capitalize;
+    font-size: .65rem !important;
+    font-weight: 500 !important;
+    font-family: inherit !important;
+    color: #ABB1B4 !important;
+    
+
+    @include lg{
+        font-size: .8rem !important;
+    }
+}
+
