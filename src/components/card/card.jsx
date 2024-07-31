@@ -52,7 +52,7 @@ export const StudentCard = ({ student, setStudents }) => {
     }
 
     return (
-        <div className="student_card">
+        <div className="student_card" style={student.status === 'active' ? {border: "1px solid #004D00"} : {}}>
             <div className="top">
                 <p className="user_name">{student.Names}</p>
                 {loading ? <Variant2 /> : <div className="toggler" onClick={() => toggleActive(student.ID)} style={student.status == 'active' ? { backgroundColor: '#0B6623' } : {}}>
