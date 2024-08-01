@@ -69,6 +69,19 @@ const Home = () => {
                     {!matricNumber && <DefaultCard students={students} />}
                 </div>
             )}
+
+            <div className="inactive_students">
+                <h4>inactive students</h4>
+
+                {
+                    students?.filter(student => student.status === 'inactive').map(student => (
+                        <div className="flex">
+                            <p>{student.Names}</p>
+                            <p>{student.Matric_Number}</p>
+                        </div>
+                    ))
+                }
+            </div>
         </div>
     );
 }

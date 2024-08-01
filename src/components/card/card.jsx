@@ -36,6 +36,7 @@ export const StudentCard = ({ student, setStudents }) => {
             return `${matricNumber[6]}${matricNumber[7]}`
         }
     }
+    
     const returnCorrectDepartment = (apprev) => {
         switch (apprev) {
             case 'CE':
